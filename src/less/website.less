@@ -23,6 +23,27 @@
     -webkit-font-smoothing: antialiased;
 }
 
+/* scrollbar */
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+*:hover {
+	&::-webkit-scrollbar-track {
+		border-radius: 3px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: rgba(221, 221, 221, 0.6);
+		border-radius: 3px;
+	}
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(141, 141, 141, 0.7);
+}
+
 a {
     text-decoration: none;
 }
@@ -37,9 +58,11 @@ html {
 
 body {
     text-rendering: optimizeLegibility;
-    font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
     font-family: @font-family-base;
     font-size: @font-size-base;
     letter-spacing: .2px;
+    color: @body-color;
     .text-adjust(100%);
 }
